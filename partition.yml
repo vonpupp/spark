@@ -1,0 +1,8 @@
+- name: Create and open the LUKS container
+  community.crypto.luks_device:
+    type: luks2
+    device: "/dev/loop0"
+    state: "opened"
+    name: "mycrypt"
+    label: personalLabelName
+    passphrase: "foo"

@@ -1,0 +1,22 @@
+* README
+
+** Connect to wifi
+#+BEGIN_SRC sh
+iwctl
+device list
+station wlan0 scan
+station wlan0 get-networks
+station wlan0 connect "ID"
+ping google.com
+#+END_SRC
+
+** Install requirements
+#+BEGIN_SRC sh
+pacman -Syy git python-passlib ansible ansible-galaxy
+
+git clone --recursive https://github.com/vonpupp/spark
+
+ansible-galaxy collection install community.crypto
+#+END_SRC
+
+** Setup
